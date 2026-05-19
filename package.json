@@ -8,6 +8,7 @@
     "dev:frontend": "vite",
     "dev:backend": "cd backend && npm run dev",
     "build": "vite build",
+    "postbuild": "cp dist/index.html dist/404.html",
     "start": "concurrently \"npm run build && vite preview\" \"cd backend && npm run start\"",
     "backend:install": "cd backend && npm install",
     "backend:db:init": "cd backend && npm run db:init"
