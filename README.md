@@ -78,6 +78,32 @@ npm run build
 
 This builds the frontend with Vite. The backend is already JavaScript-ready.
 
+## Deployment
+
+### GitHub Pages Deployment
+
+To deploy the frontend on GitHub Pages:
+
+1. **Update repository settings**:
+   - Go to your GitHub repository → Settings → Pages
+   - Set Source to "Deploy from a branch"
+   - Select branch `main` (or your default branch) and folder `/dist`
+
+2. **Build and push to GitHub**:
+```bash
+npm run build
+git add dist/
+git commit -m "Build frontend for deployment"
+git push origin main
+```
+
+3. **Backend Deployment** (Required for full functionality):
+   - Deploy the backend separately to a service like Heroku, Render, Railway, or DigitalOcean
+   - Update the `VITE_API_BASE_URL` environment variable in `.env` to point to your deployed backend
+   - Rebuild and push: `npm run build && git push`
+
+**Note**: The frontend alone on GitHub Pages will show the landing page. The app requires a running backend API for full functionality.
+
 ## Demo Credentials
 
 **Email**: john@example.com  
